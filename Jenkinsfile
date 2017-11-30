@@ -10,21 +10,9 @@ pipeline {
     
       steps {
         echo 'Building'
+        sh 'cd jenkins-sample && ./gradlew build'
       }
     }
 
-    stage('Test') {
-
-      steps {
-        echo 'Testing'
-      }
-    }
-
-    stage('Deploying') {
-
-      steps {
-        echo 'Deploying'
-      }
-    }  
   }
 }
