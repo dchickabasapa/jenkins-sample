@@ -1,0 +1,6 @@
+#Gradle Directory
+/.gradle/
+/jenkins-sample/.gradle/
+
+#Gradle Build Directory
+/jenkins-sample/build/
