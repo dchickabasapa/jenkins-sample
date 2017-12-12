@@ -5,12 +5,6 @@ pipeline {
   agent any
 
   stages {
-    stage('Setup') {
-      steps {
-        echo 'Running steps to setup the build machine'
-        sh 'docker rmi vmware-docker-skyscraper-docker.io/jenkinssample:latest 2>&1'
-      }
-    }
     stage('Build') {
       steps {
         echo 'Building'
