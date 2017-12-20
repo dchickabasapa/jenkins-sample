@@ -24,12 +24,14 @@ pipeline {
       }
     }
     stage('Application-Deployment') {
-      marathon(
-        url: 'https://dcos-masters-ply2.skyscraper.vmware.com',
-        credentialsId : 'DCOS-Creds',
-        forceUpdate: true,
-        dockerForcePull: true
-      )
+      steps {
+        marathon(
+          url: 'https://dcos-masters-ply2.skyscraper.vmware.com',
+          credentialsId : 'DCOS-Creds',
+          forceUpdate: true,
+          dockerForcePull: true
+        )
+      }
     }
   }
 }
