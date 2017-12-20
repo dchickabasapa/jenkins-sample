@@ -23,5 +23,13 @@ pipeline {
         sh 'docker push vmware-docker-skyscraper-docker.bintray.io/jenkinssample:latest'
       }
     }
+    stage('Application-Deployment') {
+      marathon(
+        url: 'https://dcos-masters-ply2.skyscraper.vmware.com',
+        credentialsId : 'DCOS-Creds',
+        forceUpdate: true,
+        dockerForcePull: true
+      )
+    }
   }
 }
